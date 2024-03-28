@@ -15,10 +15,14 @@ async function login() {
             },
         ]);
         const { username, password } = loginUser;
-        if (getExistingUsers().find((user) => user.username === username && user.password === password)) {
+        if (getExistingUsers().find((user) => user.username.toLowerCase() === username.toLowerCase() && user.password.toLowerCase() === password.toLowerCase())) {
             console.log("\n");
             console.log("****************************************");
             console.log("******* User Login Successfully! *******");
+            console.log("****************************************");
+            console.log("\n");
+            console.log("****************************************");
+            console.log(`******* Welcome to ${username}! *******`);
             console.log("****************************************");
             console.log("\n");
             loginCheck = true;

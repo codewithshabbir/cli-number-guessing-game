@@ -1,7 +1,7 @@
 import inquirer from "inquirer";
 async function numberGuess() {
-    let numberGuessCheck = false;
-    while (!numberGuessCheck) {
+    let numberGuessCheck = 5;
+    while (numberGuessCheck <= 5 && numberGuessCheck > 0) {
         const randomNumberGenerate = Math.floor(Math.random() * 10);
         const answers = await inquirer.prompt([
             {
@@ -11,11 +11,25 @@ async function numberGuess() {
         ]);
         const { numberGuess } = answers;
         if (numberGuess == randomNumberGenerate) {
-            console.log("Congratulations your answer is correct! You Won...!");
-            numberGuessCheck = true;
+            console.log("\n");
+            console.log("*******************************************************************");
+            console.log("******* Congratulations your answer is correct! You Won...! *******");
+            console.log("*******************************************************************");
+            console.log("\n");
+            process.exit();
         }
         else {
-            console.log("Your answer is wrong! Try Again");
+            --numberGuessCheck;
+            console.log("\n");
+            console.log("***************************************************");
+            console.log(`******* Your have ${numberGuessCheck} Chances left ! *******`);
+            console.log("***************************************************");
+            console.log("\n");
+            if (numberGuessCheck == 0) {
+                console.log("********************************");
+                console.log("******* Try Again Later! *******");
+                console.log("********************************");
+            }
         }
     }
 }

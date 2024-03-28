@@ -7,18 +7,23 @@ async function registerUser() {
   while (!userCheck) {
     const newUser = await inquirer.prompt([
       {
+        type: "string",
         name: "username",
         message: "Enter your Username:",
       },
       {
+        type: "string",
         name: "name",
         message: "Enter your Full Name:",
       },
       {
+        type: "list",
         name: "gender",
-        message: "Enter your Gender:",
+        message: "Select your Gender:",
+        choices: ['Male', "Female"]
       },
       {
+        type: "string",
         name: "password",
         message: "Enter your Password:",
       },
@@ -41,6 +46,11 @@ async function registerUser() {
       console.log("*********************************************");
       console.log("******* Account Created SuccessFully! *******");
       console.log("*********************************************");
+      console.log("\n");
+
+      console.log("*******************************************");
+      console.log("******* Kindly Login your Account ! *******");
+      console.log("*******************************************");
       console.log("\n");
       await login();
     }
