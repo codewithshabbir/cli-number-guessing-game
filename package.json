@@ -1,14 +1,15 @@
 {
-  "name": "cli-number-guessing-game",
+  "name": "cli-number-guessing-game-wth-login-and-registeration",
   "version": "1.0.0",
-  "description": "",
+  "description": "A CLI number guessing game with login and registration functionality.",
   "main": "index.js",
   "type": "module",
+  "bin": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["CLI", "game", "number-guessing", "login", "registration", "interactive", "node.js", "typescript", "fun", "challenge"],
+  "author": "Muhammad Shabbir",
   "license": "ISC",
   "dependencies": {
     "inquirer": "^9.2.16"
